@@ -12,13 +12,13 @@ type ItemData = {
 type Props = {
   data: ItemData
   onRemove: () => void
-  onStatus: (status: FilterStatus) => void
+  onStatus: () => void
 }
 
 export function Item({ data, onRemove, onStatus }: Props) {
     return (
         <View style={styles.container}>
-            <TouchableOpacity activeOpacity={0.7} onPress={() => onStatus(data.status)}>
+            <TouchableOpacity activeOpacity={0.7} onPress={() => onStatus()}>
                 <StatusIcon status={data.status} />
             </TouchableOpacity>
 
